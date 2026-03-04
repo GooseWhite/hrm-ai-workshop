@@ -56,6 +56,7 @@ body {
   align-items: center;
   gap: 0.5rem;
 }
+.topbar-brand:hover { color: var(--han-pink); }
 .topbar-brand::before {
   content: '';
   width: 24px;
@@ -64,6 +65,22 @@ body {
   transform: rotate(-15deg);
   display: inline-block;
 }
+
+/* Breadcrumb */
+.breadcrumb {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0.6rem 2rem;
+  font-size: 0.8rem;
+  color: var(--han-gray);
+  font-family: var(--font-body);
+}
+.breadcrumb a {
+  color: var(--han-boulder);
+  text-decoration: none;
+}
+.breadcrumb a:hover { color: var(--han-pink); }
+.breadcrumb span { margin: 0 0.35rem; }
 
 /* Hamburger */
 .hamburger {
