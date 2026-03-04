@@ -29,6 +29,7 @@ body {
   background: var(--han-white);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 /* ===== TOP BAR ===== */
