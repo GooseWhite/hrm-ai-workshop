@@ -57,13 +57,10 @@ body {
   gap: 0.5rem;
 }
 .topbar-brand:hover { color: var(--han-pink); }
-.topbar-brand::before {
-  content: '';
-  width: 24px;
-  height: 8px;
-  background: var(--han-pink);
-  transform: rotate(-15deg);
-  display: inline-block;
+.topbar-logo {
+  height: 20px;
+  width: auto;
+  display: block;
 }
 
 /* Breadcrumb */
@@ -164,9 +161,12 @@ body {
 .hero {
   background: var(--han-black);
   color: var(--han-white);
-  padding: 4rem 2rem 3.5rem;
+  padding: 5rem 2rem 4rem;
   position: relative;
   overflow: hidden;
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('img/students-campus.jpg');
+  background-size: cover;
+  background-position: center 30%;
 }
 .hero::before {
   content: '';
@@ -177,7 +177,7 @@ body {
   height: 80px;
   background: var(--han-pink);
   transform: rotate(-15deg);
-  opacity: 0.9;
+  opacity: 0.85;
 }
 .hero::after {
   content: '';
@@ -188,7 +188,7 @@ body {
   height: 60px;
   background: var(--han-pink);
   transform: rotate(-15deg);
-  opacity: 0.4;
+  opacity: 0.35;
 }
 .hero-inner {
   max-width: 800px;
@@ -395,6 +395,15 @@ hr.section-divider {
 .nav-card.olive .nav-card-icon { color: var(--han-olive); }
 .nav-card.pink .nav-card-icon { color: var(--han-pink); }
 .nav-card.navy .nav-card-icon { color: var(--han-navy); }
+
+/* Atmosphere photos */
+.atmo-img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 2rem 0;
+  object-fit: cover;
+  max-height: 300px;
+}
 
 /* Slide images */
 .slide-img {
@@ -692,6 +701,12 @@ tbody tr:hover { background: var(--han-alabaster); }
 .footer-col li {
   margin-bottom: 0.4rem;
   font-size: 0.9rem;
+}
+.footer-logo {
+  height: 28px;
+  width: auto;
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1);
 }
 .footer-bottom {
   max-width: 800px;
