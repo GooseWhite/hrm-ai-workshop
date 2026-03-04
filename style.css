@@ -79,26 +79,43 @@ body {
 .breadcrumb a:hover { color: var(--han-pink); }
 .breadcrumb span { margin: 0 0.35rem; }
 
-/* Hamburger */
+/* Hamburger - pink pill button */
 .hamburger {
-  background: none;
+  background: var(--han-pink);
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.hamburger:hover { background: #c70049; }
+.hamburger-lines {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
 }
-.hamburger span {
+.hamburger-lines span {
   display: block;
-  width: 24px;
+  width: 18px;
   height: 2px;
   background: var(--han-white);
   transition: all 0.3s;
 }
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.hamburger-label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--han-white);
+  letter-spacing: 0.5px;
+}
+.hamburger.active { background: var(--han-mineshaft); }
+.hamburger.active .hamburger-lines span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+.hamburger.active .hamburger-lines span:nth-child(2) { opacity: 0; }
+.hamburger.active .hamburger-lines span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
 
 /* ===== SLIDE MENU ===== */
 .nav-overlay {
@@ -395,6 +412,8 @@ hr.section-divider {
 .nav-card.olive .nav-card-icon { color: var(--han-olive); }
 .nav-card.pink .nav-card-icon { color: var(--han-pink); }
 .nav-card.navy .nav-card-icon { color: var(--han-navy); }
+.nav-card.coral .nav-card-icon { color: var(--han-coral); }
+.nav-card.olive .nav-card-icon { color: var(--han-olive); }
 
 /* Atmosphere photos */
 .atmo-img {
@@ -516,7 +535,11 @@ tbody tr:hover { background: var(--han-alabaster); }
   padding: 1.5rem;
   transition: all 0.2s;
 }
-.route-card:hover { border-color: var(--han-pink); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.route-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.route-card.route-1 { border-color: var(--han-coral); }
+.route-card.route-1:hover { border-color: var(--han-coral); }
+.route-card.route-2 { border-color: var(--han-olive); }
+.route-card.route-2:hover { border-color: var(--han-olive); }
 .route-card h4 { margin-top: 0; }
 .route-tag {
   font-family: var(--font-heading);
@@ -529,8 +552,8 @@ tbody tr:hover { background: var(--han-alabaster); }
   margin-bottom: 0.5rem;
   color: var(--han-white);
 }
-.route-tag.snel { background: var(--han-orange); }
-.route-tag.grondig { background: var(--han-pink); }
+.route-tag.snel { background: var(--han-coral); }
+.route-tag.grondig { background: var(--han-olive); color: var(--han-black); }
 
 /* Prompt sections */
 .prompt-section {
@@ -575,6 +598,61 @@ tbody tr:hover { background: var(--han-alabaster); }
   color: var(--han-pink);
   margin-bottom: 0.75rem;
 }
+
+/* Accordion prompt sections */
+.prompt-section .prompt-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+.prompt-section.open .prompt-body {
+  max-height: 3000px;
+  padding: 1.5rem;
+}
+.prompt-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--han-pink);
+  padding: 0.75rem 1.5rem;
+  width: 100%;
+  text-align: left;
+  transition: background 0.15s;
+  border-top: 1px solid var(--han-mercury);
+}
+.prompt-toggle:hover { background: var(--han-alabaster); }
+.prompt-toggle::before {
+  content: '\25B6';
+  font-size: 0.65rem;
+  transition: transform 0.3s;
+  display: inline-block;
+}
+.prompt-section.open .prompt-toggle::before {
+  transform: rotate(90deg);
+}
+.prompt-toggle-copy {
+  margin-left: auto;
+  background: var(--han-pink);
+  color: var(--han-white);
+  border: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.prompt-toggle-copy:hover { background: var(--han-black); }
+.prompt-toggle-copy.copied { background: var(--han-green); }
 
 /* Code blocks */
 .code-block {

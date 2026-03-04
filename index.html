@@ -11,7 +11,8 @@
 <header class="topbar">
   <a href="index.html" class="topbar-brand"><img src="img/han-logo.svg" alt="HAN" class="topbar-logo"> Workshop Playbook</a>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
+    <div class="hamburger-lines"><span></span><span></span><span></span></div>
+    <span class="hamburger-label">Menu</span>
   </button>
 </header>
 
@@ -90,12 +91,12 @@
         <h3>Stap 5</h3>
         <p>Testen, verbeteren en itereren.</p>
       </a>
-      <a href="template.html" class="nav-card blue">
+      <a href="template.html" class="nav-card coral">
         <div class="nav-card-icon">Route 1</div>
         <h3>Template</h3>
         <p>De snelle route: invullen en klaar.</p>
       </a>
-      <a href="ontwerp-prompts.html" class="nav-card pink">
+      <a href="ontwerp-prompts.html" class="nav-card olive">
         <div class="nav-card-icon">Route 2</div>
         <h3>Ontwerp-Prompts</h3>
         <p>De grondige route: vier begeleide gesprekken.</p>
@@ -136,6 +137,10 @@ function toggleMenu() {
   document.querySelector('.hamburger').classList.toggle('active');
   document.querySelector('.nav-menu').classList.toggle('open');
   document.querySelector('.nav-overlay').classList.toggle('open');
+}
+function togglePrompt(num) {
+  const section = document.getElementById('prompt-section-' + num);
+  if (section) section.classList.toggle('open');
 }
 function copyBlock(id) {
   const block = document.getElementById(id);

@@ -11,7 +11,8 @@
 <header class="topbar">
   <a href="index.html" class="topbar-brand"><img src="img/han-logo.svg" alt="HAN" class="topbar-logo"> Workshop Playbook</a>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
+    <div class="hamburger-lines"><span></span><span></span><span></span></div>
+    <span class="hamburger-label">Menu</span>
   </button>
 </header>
 
@@ -58,13 +59,13 @@
     <p><strong>Je hebt twee routes:</strong></p>
 
     <div class="routes">
-      <div class="route-card">
+      <div class="route-card route-1">
         <span class="route-tag snel">Route 1</span>
         <h4>Prompt Template (snel)</h4>
         <p>Vul het template in op basis van stap 1-3. Klaar in 5 minuten.</p>
         <p><a href="template.html" class="btn btn-outline">Ga naar template &rarr;</a></p>
       </div>
-      <div class="route-card">
+      <div class="route-card route-2">
         <span class="route-tag grondig">Route 2</span>
         <h4>De 4 Ontwerp-Prompts (grondig)</h4>
         <p>Elke prompt is een apart gesprek. Levert een completer resultaat op.</p>
@@ -118,6 +119,10 @@ function toggleMenu() {
   document.querySelector('.hamburger').classList.toggle('active');
   document.querySelector('.nav-menu').classList.toggle('open');
   document.querySelector('.nav-overlay').classList.toggle('open');
+}
+function togglePrompt(num) {
+  const section = document.getElementById('prompt-section-' + num);
+  if (section) section.classList.toggle('open');
 }
 function copyBlock(id) {
   const block = document.getElementById(id);

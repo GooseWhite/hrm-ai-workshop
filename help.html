@@ -11,7 +11,8 @@
 <header class="topbar">
   <a href="index.html" class="topbar-brand"><img src="img/han-logo.svg" alt="HAN" class="topbar-logo"> Workshop Playbook</a>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
+    <div class="hamburger-lines"><span></span><span></span><span></span></div>
+    <span class="hamburger-label">Menu</span>
   </button>
 </header>
 
@@ -135,6 +136,10 @@ function toggleMenu() {
   document.querySelector('.hamburger').classList.toggle('active');
   document.querySelector('.nav-menu').classList.toggle('open');
   document.querySelector('.nav-overlay').classList.toggle('open');
+}
+function togglePrompt(num) {
+  const section = document.getElementById('prompt-section-' + num);
+  if (section) section.classList.toggle('open');
 }
 function copyBlock(id) {
   const block = document.getElementById(id);

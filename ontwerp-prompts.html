@@ -11,7 +11,8 @@
 <header class="topbar">
   <a href="index.html" class="topbar-brand"><img src="img/han-logo.svg" alt="HAN" class="topbar-logo"> Workshop Playbook</a>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
+    <div class="hamburger-lines"><span></span><span></span><span></span></div>
+    <span class="hamburger-label">Menu</span>
   </button>
 </header>
 
@@ -52,7 +53,7 @@
       <strong>Wat je nodig hebt:</strong> de antwoorden uit stap 1-3. Die gebruik je als input voor de gesprekken.
     </div>
 
-    <div class="prompt-section">
+    <div class="prompt-section" id="prompt-section-1">
       <div class="prompt-header">
         <h3>Kennis &amp; Context</h3>
         <span class="prompt-num">Prompt 1</span>
@@ -69,9 +70,13 @@
           <li>De AI maakt een gestructureerd overzicht</li>
         </ol>
       </div>
+      <button class="prompt-toggle" onclick="togglePrompt(1)">
+        Bekijk volledige prompt
+        <button class="prompt-toggle-copy" onclick="event.stopPropagation(); copyBlock('prompt1-code')">Kopieer</button>
+      </button>
       <div class="prompt-body">
         <div class="copy-label">Start een nieuw gesprek en plak het volgende:</div>
-        <div class="code-block" id="prompt{i+1}-code"># Rol
+        <div class="code-block" id="prompt1-code"># Rol
 Je bent een Kennis-Specialist die helpt bij het ontwerpen van AI-assistenten. Je specialiteit: de juiste kennis en context identificeren die een assistent nodig heeft om zijn taak goed uit te voeren. Je stelt gerichte vragen, luistert naar wat er expliciet en impliciet gezegd wordt, en structureert de output zodat een AI-assistent er direct mee kan werken.
 
 # Doel
@@ -176,11 +181,11 @@ Hoeveel tijd heb je voor deze sessie?
 &gt; Uitgebreid (25+ minuten)
 
 Zodra je het aangeeft, pas ik de diepte van ons gesprek daarop aan.
-<button class="copy-btn" onclick="copyBlock('prompt{i+1}-code')">Kopieer</button></div>
+<button class="copy-btn" onclick="copyBlock('prompt1-code')">Kopieer</button></div>
       </div>
     </div>
 
-    <div class="prompt-section">
+    <div class="prompt-section" id="prompt-section-2">
       <div class="prompt-header">
         <h3>Werkwijze &amp; Regels</h3>
         <span class="prompt-num">Prompt 2</span>
@@ -197,9 +202,13 @@ Zodra je het aangeeft, pas ik de diepte van ons gesprek daarop aan.
           <li>De AI maakt een set werkregels</li>
         </ol>
       </div>
+      <button class="prompt-toggle" onclick="togglePrompt(2)">
+        Bekijk volledige prompt
+        <button class="prompt-toggle-copy" onclick="event.stopPropagation(); copyBlock('prompt2-code')">Kopieer</button>
+      </button>
       <div class="prompt-body">
         <div class="copy-label">Start een nieuw gesprek en plak het volgende:</div>
-        <div class="code-block" id="prompt{i+1}-code"># Rol
+        <div class="code-block" id="prompt2-code"># Rol
 Je bent een Werkwijze-Ontwerper die helpt bij het ontwerpen van AI-assistenten. Je specialiteit: de regels, beslispatronen en werkprocessen definieren die een assistent moet volgen. Je helpt me nadenken over hoe mijn assistent moet redeneren, wanneer hij wat moet doen, en wat hij absoluut moet vermijden.
 
 # Doel
@@ -293,11 +302,11 @@ Hoeveel tijd heb je voor deze sessie?
 &gt; Uitgebreid (30+ minuten)
 
 Zodra je het aangeeft, vraag ik naar specifieke scenario's om in kaart te brengen hoe je wilt dat je assistent werkt en beslist.
-<button class="copy-btn" onclick="copyBlock('prompt{i+1}-code')">Kopieer</button></div>
+<button class="copy-btn" onclick="copyBlock('prompt2-code')">Kopieer</button></div>
       </div>
     </div>
 
-    <div class="prompt-section">
+    <div class="prompt-section" id="prompt-section-3">
       <div class="prompt-header">
         <h3>Stem &amp; Stijl</h3>
         <span class="prompt-num">Prompt 3</span>
@@ -314,9 +323,13 @@ Zodra je het aangeeft, vraag ik naar specifieke scenario's om in kaart te brenge
           <li>De AI maakt een communicatieprofiel</li>
         </ol>
       </div>
+      <button class="prompt-toggle" onclick="togglePrompt(3)">
+        Bekijk volledige prompt
+        <button class="prompt-toggle-copy" onclick="event.stopPropagation(); copyBlock('prompt3-code')">Kopieer</button>
+      </button>
       <div class="prompt-body">
         <div class="copy-label">Start een nieuw gesprek en plak het volgende:</div>
-        <div class="code-block" id="prompt{i+1}-code"># Rol
+        <div class="code-block" id="prompt3-code"># Rol
 Je bent een Communicatie-Ontwerper die helpt bij het ontwerpen van AI-assistenten. Je specialiteit: de communicatiestijl definieren die een assistent moet hanteren. Je helpt me bepalen hoe mijn assistent klinkt, schrijft en communiceert — zodat de output past bij mijn situatie en doelgroep.
 
 # Doel
@@ -401,11 +414,11 @@ Hoeveel tijd heb je voor deze sessie?
 &gt; Uitgebreid (30+ minuten)
 
 Zodra je het aangeeft, vraag ik naar de gewenste communicatiestijl van je assistent.
-<button class="copy-btn" onclick="copyBlock('prompt{i+1}-code')">Kopieer</button></div>
+<button class="copy-btn" onclick="copyBlock('prompt3-code')">Kopieer</button></div>
       </div>
     </div>
 
-    <div class="prompt-section">
+    <div class="prompt-section" id="prompt-section-4">
       <div class="prompt-header">
         <h3>Alles Samenvoegen</h3>
         <span class="prompt-num">Prompt 4</span>
@@ -422,9 +435,13 @@ Zodra je het aangeeft, vraag ik naar de gewenste communicatiestijl van je assist
           <li>Je test je assistent met een echte vraag</li>
         </ol>
       </div>
+      <button class="prompt-toggle" onclick="togglePrompt(4)">
+        Bekijk volledige prompt
+        <button class="prompt-toggle-copy" onclick="event.stopPropagation(); copyBlock('prompt4-code')">Kopieer</button>
+      </button>
       <div class="prompt-body">
         <div class="copy-label">Start een nieuw gesprek en plak het volgende:</div>
-        <div class="code-block" id="prompt{i+1}-code"># Rol
+        <div class="code-block" id="prompt4-code"># Rol
 Je bent een AI-Assistent Bouwer die ontwerpdocumenten omzet in werkende instructies. Je specialiteit: drie losse kennisdocumenten combineren tot een compact instructieblok dat verwijst naar die documenten. Het resultaat werkt in elke AI-tool die bestanden ondersteunt (ChatGPT Custom GPTs, Claude Projects, Gemini Gems, Copilot).
 
 # Doel
@@ -538,7 +555,7 @@ Begin elk gesprek altijd met: "[relevante openingsvraag]"
 Deel je drie ontwerpdocumenten (kennis-en-context, werkwijze-en-regels, stem-en-stijl) en ik combineer ze tot compacte instructies die naar die documenten verwijzen.
 
 Als je niet alle drie hebt, geen probleem. Deel wat je hebt en ik stel korte aanvullende vragen.
-<button class="copy-btn" onclick="copyBlock('prompt{i+1}-code')">Kopieer</button></div>
+<button class="copy-btn" onclick="copyBlock('prompt4-code')">Kopieer</button></div>
       </div>
     </div>
 
@@ -578,6 +595,10 @@ function toggleMenu() {
   document.querySelector('.hamburger').classList.toggle('active');
   document.querySelector('.nav-menu').classList.toggle('open');
   document.querySelector('.nav-overlay').classList.toggle('open');
+}
+function togglePrompt(num) {
+  const section = document.getElementById('prompt-section-' + num);
+  if (section) section.classList.toggle('open');
 }
 function copyBlock(id) {
   const block = document.getElementById(id);
