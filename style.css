@@ -356,11 +356,12 @@ hr.section-divider {
 }
 .nav-card-icon {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--han-pink);
   margin-bottom: 0.5rem;
   line-height: 1;
+  text-transform: uppercase;
 }
 .nav-card h3 {
   margin: 0 0 0.5rem 0;
