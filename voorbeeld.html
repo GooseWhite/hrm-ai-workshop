@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voorbeeld: Marieke | Workshop Playbook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="topbar-brand">Workshop Playbook</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="nav-overlay" onclick="toggleMenu()"></div>
+<nav class="nav-menu">
+    <div class="nav-section">Overzicht</div>
+    <a href="index.html">Home</a>
+    <a href="blueprint.html">Blueprint</a>
+    <div class="nav-section">Stappen</div>
+    <a href="stap-1-3.html">Stap 1-3</a>
+    <a href="stap-4.html">Stap 4</a>
+    <a href="stap-5.html">Stap 5</a>
+    <div class="nav-section">Bouwen</div>
+    <a href="template.html">Template</a>
+    <a href="ontwerp-prompts.html">Ontwerp-Prompts</a>
+    <a href="instellen.html">Instellen</a>
+    <div class="nav-section">Extra</div>
+    <a href="voorbeeld.html" class="active">Voorbeeld</a>
+    <a href="help.html">Help</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>Voorbeeld: Marieke</h1>
+    <p class="lead">Hoe een gesprek met Prompt 1 eruitziet in de praktijk.</p>
+  </div>
+</div>
+
+<main class="content">
+
+    <p>Stel: Marieke geeft les in arbeidsrecht aan de HAN. Ze wil een assistent die activerende werkvormen ontwerpt. Hier is hoe het gesprek gaat bij Prompt 1 (Kennis &amp; Context):</p>
+
+    <div class="msg ai">
+      <div class="speaker">AI</div>
+      Hoeveel tijd heb je voor deze sessie?<br><br>
+      &gt; Snel (8-10 minuten)<br>
+      &gt; Standaard (15-20 minuten)<br>
+      &gt; Uitgebreid (25+ minuten)
+    </div>
+    <div class="msg user">
+      <div class="speaker">Marieke</div>
+      Snel, ik heb zo 10 minuten.
+    </div>
+    <div class="msg ai">
+      <div class="speaker">AI</div>
+      Prima, we houden het bij 8-10 minuten. Ik stel je 2-3 gerichte vragen.<br><br>
+      Eerste vraag: Wat is de taak die je assistent gaat doen? En voor wie is het resultaat bedoeld?
+    </div>
+    <div class="msg user">
+      <div class="speaker">Marieke</div>
+      Ik wil een assistent die activerende werkvormen ontwerpt voor mijn lessen. Mijn studenten zijn 2e-jaars HBO, opleiding HRM, 18-22 jaar. Groepen van 20-30 studenten. Lessen zijn 90 minuten.<br><br>
+      Nu bedenk ik werkvormen zelf of zoek ik online, maar dat kost me elke week minstens een uur. En vaak val ik terug op dezelfde paar werkvormen.
+    </div>
+    <div class="msg ai">
+      <div class="speaker">AI</div>
+      Helder. Tweede vraag: Welke kennis of context heeft de assistent nodig om goede werkvormen voor te stellen?<br><br>
+      Denk aan:<br>
+      - Specifieke vakinhoud of onderwerpen die je behandelt<br>
+      - Wat je al weet over wat werkt bij jouw studenten<br>
+      - Beperkingen (ruimte, materiaal, tijd)
+    </div>
+    <div class="msg user">
+      <div class="speaker">Marieke</div>
+      Ik geef arbeidsrecht. Onderwerpen zijn dingen als ontslagrecht, cao's, arbeidsovereenkomsten, medezeggenschap. Best droge stof.<br><br>
+      Wat werkt: alles waarbij studenten moeten samenwerken en een casus oplossen. Ze worden pas actief als het concreet en herkenbaar is.<br><br>
+      Beperkingen: ik heb een beamer, whiteboard, en dat is het. De ruimte is een standaard collegezaal met tafels in groepen.
+    </div>
+
+    <p><strong>Resultaat:</strong> De AI maakt <code>kennis-en-context.md</code> met drie kennisgebieden uitgewerkt. Marieke gebruikt dit vervolgens in Prompt 4 om er werkende instructies van te maken.</p>
+
+    <nav class="page-nav">
+      <a href="instellen.html" class="prev">&larr; Instellen</a>
+      <a href="help.html" class="next">Help &rarr;</a>
+    </nav>
+</main>
+
+<footer class="footer">
+  <p><strong>HAN University of Applied Sciences</strong> &mdash; AI Desk</p>
+  <p>Workshop Playbook &mdash; Maart 2026</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.querySelector('.nav-menu').classList.toggle('open');
+  document.querySelector('.nav-overlay').classList.toggle('open');
+}
+function copyBlock(id) {
+  const block = document.getElementById(id);
+  const btn = block.querySelector('.copy-btn');
+  const text = block.textContent.replace(btn ? btn.textContent : '', '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    if (btn) {
+      btn.textContent = 'Gekopieerd';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Kopieer'; btn.classList.remove('copied'); }, 2000);
+    }
+  });
+}
+</script>
+</body>
+</html>

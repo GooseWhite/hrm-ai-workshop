@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Je Assistent Instellen | Workshop Playbook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="topbar-brand">Workshop Playbook</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="nav-overlay" onclick="toggleMenu()"></div>
+<nav class="nav-menu">
+    <div class="nav-section">Overzicht</div>
+    <a href="index.html">Home</a>
+    <a href="blueprint.html">Blueprint</a>
+    <div class="nav-section">Stappen</div>
+    <a href="stap-1-3.html">Stap 1-3</a>
+    <a href="stap-4.html">Stap 4</a>
+    <a href="stap-5.html">Stap 5</a>
+    <div class="nav-section">Bouwen</div>
+    <a href="template.html">Template</a>
+    <a href="ontwerp-prompts.html">Ontwerp-Prompts</a>
+    <a href="instellen.html" class="active">Instellen</a>
+    <div class="nav-section">Extra</div>
+    <a href="voorbeeld.html">Voorbeeld</a>
+    <a href="help.html">Help</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>Je Assistent Instellen</h1>
+    <p class="lead">Instructies plaatsen in ChatGPT, Gemini, Claude of Copilot.</p>
+  </div>
+</div>
+
+<main class="content">
+
+    <p>Nadat je je instructies hebt geschreven, moet je ze in je tool plaatsen.</p>
+
+    <img src="slides/2026-03-05-HRM AI-19.jpeg" alt="Path A en Path B" class="slide-img" loading="lazy">
+
+    <h2>ChatGPT (Custom GPT, Plus vereist)</h2>
+    <ol>
+      <li>Ga naar Explore GPTs &rarr; Create a GPT</li>
+      <li>Plak je instructies bij "Instructions"</li>
+      <li>Upload kennisbestanden bij "Knowledge" (als je die hebt)</li>
+      <li>Optioneel: upload extra bestanden</li>
+      <li>Sla op en geef je GPT een naam</li>
+    </ol>
+
+    <img src="slides/2026-03-05-HRM AI-7.jpeg" alt="ChatGPT configuratie" class="slide-img" loading="lazy">
+
+    <div class="callout note">
+      <strong>Geen Plus?</strong> Gebruik Custom Instructions (Settings &rarr; Personalization &rarr; Custom Instructions). Nadeel: je kunt daar geen bestanden uploaden.
+    </div>
+
+    <h2>Gemini (Gems)</h2>
+    <ol>
+      <li>Ga naar gemini.google.com</li>
+      <li>Klik op "Gem manager" in het linkermenu</li>
+      <li>Klik op "New Gem"</li>
+      <li>Plak je instructies</li>
+      <li>Geef je Gem een naam en sla op</li>
+    </ol>
+
+    <h2>Claude (Project, gratis)</h2>
+    <ol>
+      <li>Ga naar Projects in het linkermenu</li>
+      <li>Klik op "New project"</li>
+      <li>Geef het een naam</li>
+      <li>Plak je instructies bij "Instructions" in de Project Settings</li>
+      <li>Upload kennisbestanden als "Project Knowledge"</li>
+    </ol>
+
+    <h2>Copilot</h2>
+    <ol>
+      <li>Plak je instructies aan het begin van een nieuw gesprek</li>
+      <li>Upload kennisbestanden als bijlagen</li>
+      <li>Copilot heeft (nog) geen permanente instructieopslag. Bewaar je instructies in een document.</li>
+    </ol>
+
+    <nav class="page-nav">
+      <a href="ontwerp-prompts.html" class="prev">&larr; Ontwerp-Prompts</a>
+      <a href="voorbeeld.html" class="next">Voorbeeld &rarr;</a>
+    </nav>
+</main>
+
+<footer class="footer">
+  <p><strong>HAN University of Applied Sciences</strong> &mdash; AI Desk</p>
+  <p>Workshop Playbook &mdash; Maart 2026</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.querySelector('.nav-menu').classList.toggle('open');
+  document.querySelector('.nav-overlay').classList.toggle('open');
+}
+function copyBlock(id) {
+  const block = document.getElementById(id);
+  const btn = block.querySelector('.copy-btn');
+  const text = block.textContent.replace(btn ? btn.textContent : '', '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    if (btn) {
+      btn.textContent = 'Gekopieerd';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Kopieer'; btn.classList.remove('copied'); }, 2000);
+    }
+  });
+}
+</script>
+</body>
+</html>

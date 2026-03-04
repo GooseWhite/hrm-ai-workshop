@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bouw Je Eigen AI Team | Workshop Playbook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="topbar-brand">Workshop Playbook</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="nav-overlay" onclick="toggleMenu()"></div>
+<nav class="nav-menu">
+    <div class="nav-section">Overzicht</div>
+    <a href="index.html" class="active">Home</a>
+    <a href="blueprint.html">Blueprint</a>
+    <div class="nav-section">Stappen</div>
+    <a href="stap-1-3.html">Stap 1-3</a>
+    <a href="stap-4.html">Stap 4</a>
+    <a href="stap-5.html">Stap 5</a>
+    <div class="nav-section">Bouwen</div>
+    <a href="template.html">Template</a>
+    <a href="ontwerp-prompts.html">Ontwerp-Prompts</a>
+    <a href="instellen.html">Instellen</a>
+    <div class="nav-section">Extra</div>
+    <a href="voorbeeld.html">Voorbeeld</a>
+    <a href="help.html">Help</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>Bouw Je Eigen AI Team</h1>
+    <p class="lead">Workshop Playbook &mdash; AI-vaardigheidsontwikkeling HRM</p>
+  </div>
+</div>
+
+<main class="content">
+
+    <p>Je hebt waarschijnlijk al eens ChatGPT, Claude of Copilot gebruikt. Misschien zelfs regelmatig. Maar eerlijk: het voelt vaak generiek. Je stelt een vraag, krijgt een antwoord, en de volgende keer begint alles weer op nul.</p>
+    <p>Dat is geen probleem van de tool. Het is een structuurprobleem.</p>
+
+    <h2>Waarom generieke AI niet werkt</h2>
+    <p>Een generieke AI kent:</p>
+    <ul>
+      <li>Je vakgebied niet (welke cursussen geef je, welke leerdoelen)</li>
+      <li>Je studenten niet (niveau, achtergrond, groepsgrootte)</li>
+      <li>Je werkprocessen niet (hoe je feedback geeft, hoe je beoordeelt)</li>
+      <li>Je stijl niet (formeel of informeel, kort of uitgebreid)</li>
+      <li>Je voorkeuren niet (wat je wel en niet wilt in antwoorden)</li>
+    </ul>
+
+    <img src="slides/2026-03-05-HRM AI-4.jpeg" alt="NU vs ALTIJD" class="slide-img" loading="lazy">
+
+    <div class="accent-bar">
+      <strong>Het verschil: NU vs. ALTIJD.</strong><br>
+      Een gewone prompt is een eenmalige opdracht: "Geef me 3 werkvormen voor arbeidsrecht." Dat is NU.<br>
+      Wat je vandaag bouwt is ALTIJD: een assistent die permanent begrijpt wie je bent, wat je nodig hebt, en hoe je werkt.
+    </div>
+
+    <h2>Wat je bouwt</h2>
+    <p>Een AI-assistent die specifiek is ontworpen voor een taak uit jouw werk. Eentje die je kennis kent, je regels volgt, en in de juiste stijl communiceert. Elke keer opnieuw.</p>
+    <p><a href="blueprint.html">Begin met het 5-Stappen Blueprint &rarr;</a></p>
+
+    <nav class="page-nav">
+      <span class="spacer"></span>
+      <a href="blueprint.html" class="next">Blueprint &rarr;</a>
+    </nav>
+</main>
+
+<footer class="footer">
+  <p><strong>HAN University of Applied Sciences</strong> &mdash; AI Desk</p>
+  <p>Workshop Playbook &mdash; Maart 2026</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.querySelector('.nav-menu').classList.toggle('open');
+  document.querySelector('.nav-overlay').classList.toggle('open');
+}
+function copyBlock(id) {
+  const block = document.getElementById(id);
+  const btn = block.querySelector('.copy-btn');
+  const text = block.textContent.replace(btn ? btn.textContent : '', '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    if (btn) {
+      btn.textContent = 'Gekopieerd';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Kopieer'; btn.classList.remove('copied'); }, 2000);
+    }
+  });
+}
+</script>
+</body>
+</html>

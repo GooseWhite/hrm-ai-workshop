@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Het 5-Stappen Blueprint | Workshop Playbook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="topbar-brand">Workshop Playbook</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="nav-overlay" onclick="toggleMenu()"></div>
+<nav class="nav-menu">
+    <div class="nav-section">Overzicht</div>
+    <a href="index.html">Home</a>
+    <a href="blueprint.html" class="active">Blueprint</a>
+    <div class="nav-section">Stappen</div>
+    <a href="stap-1-3.html">Stap 1-3</a>
+    <a href="stap-4.html">Stap 4</a>
+    <a href="stap-5.html">Stap 5</a>
+    <div class="nav-section">Bouwen</div>
+    <a href="template.html">Template</a>
+    <a href="ontwerp-prompts.html">Ontwerp-Prompts</a>
+    <a href="instellen.html">Instellen</a>
+    <div class="nav-section">Extra</div>
+    <a href="voorbeeld.html">Voorbeeld</a>
+    <a href="help.html">Help</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>Het 5-Stappen Blueprint</h1>
+    <p class="lead">Het proces dat je doorloopt om je AI-assistent te bouwen.</p>
+  </div>
+</div>
+
+<main class="content">
+
+    <img src="slides/2026-03-05-HRM AI-8.jpeg" alt="Het 5-Stappen Blueprint" class="slide-img" loading="lazy">
+
+    <div class="blueprint">
+      <div class="blueprint-step">
+        <div class="blueprint-num">1</div>
+        <div class="blueprint-label">Doel</div>
+        <div class="blueprint-desc">Welke taak pakt je assistent op?</div>
+      </div>
+      <div class="blueprint-step">
+        <div class="blueprint-num">2</div>
+        <div class="blueprint-label">Vaardigheden</div>
+        <div class="blueprint-desc">Wat moet hij kunnen?</div>
+      </div>
+      <div class="blueprint-step">
+        <div class="blueprint-num">3</div>
+        <div class="blueprint-label">Kennis</div>
+        <div class="blueprint-desc">Wat moet hij weten over jou en je situatie?</div>
+      </div>
+      <div class="blueprint-step">
+        <div class="blueprint-num">4</div>
+        <div class="blueprint-label">Instructies</div>
+        <div class="blueprint-desc">Welke regels volgt hij? Hoe communiceert hij?</div>
+      </div>
+      <div class="blueprint-step">
+        <div class="blueprint-num">5</div>
+        <div class="blueprint-label">Test</div>
+        <div class="blueprint-desc">Werkt het? Wat kan beter?</div>
+      </div>
+    </div>
+
+    <p><strong>Stap 1-3</strong> doe je zelf. Dat is het denkwerk: helder krijgen wat je wilt bouwen.</p>
+    <p><strong>Stap 4</strong> is waar je gaat bouwen. Hier heb je twee routes:</p>
+    <ul>
+      <li><strong>Route 1 &mdash; <a href="template.html">Prompt Template</a> (snel):</strong> invullen en klaar in 5 minuten.</li>
+      <li><strong>Route 2 &mdash; <a href="ontwerp-prompts.html">4 Ontwerp-Prompts</a> (grondig):</strong> elk een apart gesprek, completer resultaat.</li>
+    </ul>
+    <p><strong>Stap 5</strong> doe je door je assistent te testen met een echte taak.</p>
+
+    <p><a href="stap-1-3.html">Begin met Stap 1-3 &rarr;</a></p>
+
+    <nav class="page-nav">
+      <a href="index.html" class="prev">&larr; Home</a>
+      <a href="stap-1-3.html" class="next">Stap 1-3 &rarr;</a>
+    </nav>
+</main>
+
+<footer class="footer">
+  <p><strong>HAN University of Applied Sciences</strong> &mdash; AI Desk</p>
+  <p>Workshop Playbook &mdash; Maart 2026</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.querySelector('.nav-menu').classList.toggle('open');
+  document.querySelector('.nav-overlay').classList.toggle('open');
+}
+function copyBlock(id) {
+  const block = document.getElementById(id);
+  const btn = block.querySelector('.copy-btn');
+  const text = block.textContent.replace(btn ? btn.textContent : '', '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    if (btn) {
+      btn.textContent = 'Gekopieerd';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Kopieer'; btn.classList.remove('copied'); }, 2000);
+    }
+  });
+}
+</script>
+</body>
+</html>

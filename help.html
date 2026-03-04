@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Troubleshooting &amp; Resources | Workshop Playbook</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="topbar-brand">Workshop Playbook</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="nav-overlay" onclick="toggleMenu()"></div>
+<nav class="nav-menu">
+    <div class="nav-section">Overzicht</div>
+    <a href="index.html">Home</a>
+    <a href="blueprint.html">Blueprint</a>
+    <div class="nav-section">Stappen</div>
+    <a href="stap-1-3.html">Stap 1-3</a>
+    <a href="stap-4.html">Stap 4</a>
+    <a href="stap-5.html">Stap 5</a>
+    <div class="nav-section">Bouwen</div>
+    <a href="template.html">Template</a>
+    <a href="ontwerp-prompts.html">Ontwerp-Prompts</a>
+    <a href="instellen.html">Instellen</a>
+    <div class="nav-section">Extra</div>
+    <a href="voorbeeld.html">Voorbeeld</a>
+    <a href="help.html" class="active">Help</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>Troubleshooting &amp; Resources</h1>
+    <p class="lead">Veelgestelde problemen en HAN resources.</p>
+  </div>
+</div>
+
+<main class="content">
+
+    <h2>Troubleshooting</h2>
+
+    <h4>"De AI stelt geen vragen"</h4>
+    <ul>
+      <li>Check of je de hele prompt hebt geplakt (niet alleen een deel)</li>
+      <li>Probeer: "Begin met het stellen van vragen over mijn taak"</li>
+    </ul>
+
+    <h4>"De output klinkt generiek"</h4>
+    <ul>
+      <li>De kennis en context is waarschijnlijk te vaag. Voeg specifiekere details toe</li>
+      <li>Hoe specifieker jouw input, hoe specifieker de output</li>
+    </ul>
+
+    <h4>"De assistent doet niet wat ik wil"</h4>
+    <ul>
+      <li>Check je werkregels: staat erin wat je WEL wilt, of alleen wat je NIET wilt?</li>
+      <li>Voeg een concreet voorbeeld toe: "Als ik vraag om X, verwacht ik Y"</li>
+    </ul>
+
+    <h4>"De antwoorden zijn te lang of te kort"</h4>
+    <ul>
+      <li>Voeg een lengte-instructie toe: "Houd antwoorden onder 200 woorden"</li>
+      <li>Specificeer het format: "Gebruik opsommingstekens" of "Schrijf in lopende tekst"</li>
+    </ul>
+
+    <h4>"De stijl klopt niet"</h4>
+    <ul>
+      <li>Voeg voor/na voorbeelden toe: "Schrijf niet zo: [X]. Schrijf wel zo: [Y]"</li>
+      <li>Geef feedback in het gesprek: "Dat is te formeel, schrijf informeler"</li>
+    </ul>
+
+    <h2>HAN Resources</h2>
+
+    <img src="slides/2026-03-05-HRM AI-14.jpeg" alt="Jouw Guardrails" class="slide-img" loading="lazy">
+
+    <h3>Verantwoord AI-gebruik</h3>
+    <ul>
+      <li><strong>Arda</strong>: privacy en databescherming, weet wat veilig is</li>
+      <li><strong>AI Framework</strong>: richtlijnen voor AI-gebruik bij de HAN</li>
+      <li><strong>AI Hub</strong>: veilige experimenteeromgeving</li>
+    </ul>
+
+    <h3>Tools (kies er een)</h3>
+    <ul>
+      <li><strong>ChatGPT</strong>: chat.openai.com (Plus voor Custom GPTs, gratis voor Custom Instructions)</li>
+      <li><strong>Claude</strong>: claude.ai (gratis, Projects voor instructies)</li>
+      <li><strong>Gemini</strong>: gemini.google.com (Gems voor assistenten)</li>
+      <li><strong>Copilot</strong>: copilot.microsoft.com (via HAN licentie)</li>
+    </ul>
+
+    <h3>Contact</h3>
+    <ul>
+      <li><strong>Guus Witjes</strong>: AI Desk, guuswitjes@gmail.com</li>
+    </ul>
+
+    <nav class="page-nav">
+      <a href="voorbeeld.html" class="prev">&larr; Voorbeeld</a>
+      <span class="spacer"></span>
+    </nav>
+</main>
+
+<footer class="footer">
+  <p><strong>HAN University of Applied Sciences</strong> &mdash; AI Desk</p>
+  <p>Workshop Playbook &mdash; Maart 2026</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.querySelector('.nav-menu').classList.toggle('open');
+  document.querySelector('.nav-overlay').classList.toggle('open');
+}
+function copyBlock(id) {
+  const block = document.getElementById(id);
+  const btn = block.querySelector('.copy-btn');
+  const text = block.textContent.replace(btn ? btn.textContent : '', '').trim();
+  navigator.clipboard.writeText(text).then(() => {
+    if (btn) {
+      btn.textContent = 'Gekopieerd';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Kopieer'; btn.classList.remove('copied'); }, 2000);
+    }
+  });
+}
+</script>
+</body>
+</html>
