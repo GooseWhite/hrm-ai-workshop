@@ -68,7 +68,7 @@
       </div>
       <div class="prompt-body">
         <div class="copy-label">Start een nieuw gesprek en plak het volgende:</div>
-        <div class="code-block" id="prompt1-code"># Rol
+        <div class="code-block" id="prompt{i+1}-code"># Rol
 Je bent een Kennis-Specialist die helpt bij het ontwerpen van AI-assistenten. Je specialiteit: de juiste kennis en context identificeren die een assistent nodig heeft om zijn taak goed uit te voeren. Je stelt gerichte vragen, luistert naar wat er expliciet en impliciet gezegd wordt, en structureert de output zodat een AI-assistent er direct mee kan werken.
 
 # Doel
@@ -173,7 +173,7 @@ Hoeveel tijd heb je voor deze sessie?
 &gt; Uitgebreid (25+ minuten)
 
 Zodra je het aangeeft, pas ik de diepte van ons gesprek daarop aan.
-<button class="copy-btn" onclick="copyBlock('prompt1-code')">Kopieer</button></div>
+<button class="copy-btn" onclick="copyBlock('prompt{i+1}-code')">Kopieer</button></div>
       </div>
     </div>
 
@@ -196,7 +196,7 @@ Zodra je het aangeeft, pas ik de diepte van ons gesprek daarop aan.
       </div>
       <div class="prompt-body">
         <div class="copy-label">Start een nieuw gesprek en plak het volgende:</div>
-        <div class="code-block" id="prompt2-code"># Rol
+        <div class="code-block" id="prompt{i+1}-code"># Rol
 Je bent een Werkwijze-Ontwerper die helpt bij het ontwerpen van AI-assistenten. Je specialiteit: de regels, beslispatronen en werkprocessen definieren die een assistent moet volgen. Je helpt me nadenken over hoe mijn assistent moet redeneren, wanneer hij wat moet doen, en wat hij absoluut moet vermijden.
 
 # Doel
@@ -290,7 +290,7 @@ Hoeveel tijd heb je voor deze sessie?
 &gt; Uitgebreid (30+ minuten)
 
 Zodra je het aangeeft, vraag ik naar specifieke scenario's om in kaart te brengen hoe je wilt dat je assistent werkt en beslist.
-<button class="copy-btn" onclick="copyBlock('prompt2-code')">Kopieer</button></div>
+<button class="copy-btn" onclick="copyBlock('prompt{i+1}-code')">Kopieer</button></div>
       </div>
     </div>
 
@@ -313,7 +313,7 @@ Zodra je het aangeeft, vraag ik naar specifieke scenario's om in kaart te brenge
       </div>
       <div class="prompt-body">
         <div class="copy-label">Start een nieuw gesprek en plak het volgende:</div>
-        <div class="code-block" id="prompt3-code"># Rol
+        <div class="code-block" id="prompt{i+1}-code"># Rol
 Je bent een Communicatie-Ontwerper die helpt bij het ontwerpen van AI-assistenten. Je specialiteit: de communicatiestijl definieren die een assistent moet hanteren. Je helpt me bepalen hoe mijn assistent klinkt, schrijft en communiceert — zodat de output past bij mijn situatie en doelgroep.
 
 # Doel
@@ -398,7 +398,7 @@ Hoeveel tijd heb je voor deze sessie?
 &gt; Uitgebreid (30+ minuten)
 
 Zodra je het aangeeft, vraag ik naar de gewenste communicatiestijl van je assistent.
-<button class="copy-btn" onclick="copyBlock('prompt3-code')">Kopieer</button></div>
+<button class="copy-btn" onclick="copyBlock('prompt{i+1}-code')">Kopieer</button></div>
       </div>
     </div>
 
@@ -421,7 +421,7 @@ Zodra je het aangeeft, vraag ik naar de gewenste communicatiestijl van je assist
       </div>
       <div class="prompt-body">
         <div class="copy-label">Start een nieuw gesprek en plak het volgende:</div>
-        <div class="code-block" id="prompt4-code"># Rol
+        <div class="code-block" id="prompt{i+1}-code"># Rol
 Je bent een AI-Assistent Bouwer die ontwerpdocumenten omzet in werkende instructies. Je specialiteit: drie losse kennisdocumenten combineren tot een compact instructieblok dat verwijst naar die documenten. Het resultaat werkt in elke AI-tool die bestanden ondersteunt (ChatGPT Custom GPTs, Claude Projects, Gemini Gems, Copilot).
 
 # Doel
@@ -535,11 +535,11 @@ Begin elk gesprek altijd met: "[relevante openingsvraag]"
 Deel je drie ontwerpdocumenten (kennis-en-context, werkwijze-en-regels, stem-en-stijl) en ik combineer ze tot compacte instructies die naar die documenten verwijzen.
 
 Als je niet alle drie hebt, geen probleem. Deel wat je hebt en ik stel korte aanvullende vragen.
-<button class="copy-btn" onclick="copyBlock('prompt4-code')">Kopieer</button></div>
+<button class="copy-btn" onclick="copyBlock('prompt{i+1}-code')">Kopieer</button></div>
       </div>
     </div>
 
-    <p>Na het doorlopen van de prompts: ga naar <a href="instellen.html">Je Assistent Instellen</a>.</p>
+    <p style="margin-top: 1.5rem;"><a href="instellen.html" class="btn btn-primary">Ga naar Instellen &rarr;</a></p>
 
     <nav class="page-nav">
       <a href="template.html" class="prev">&larr; Template</a>
@@ -548,8 +548,25 @@ Als je niet alle drie hebt, geen probleem. Deel wat je hebt en ik stel korte aan
 </main>
 
 <footer class="footer">
-  <p><strong>HAN University of Applied Sciences</strong> &mdash; AI Desk</p>
-  <p>Workshop Playbook &mdash; Maart 2026</p>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Workshop Playbook</h4>
+      <p>Bouw Je Eigen AI Team: van generieke AI naar een persoonlijke assistent die jouw kennis kent, jouw regels volgt en in jouw stijl communiceert.</p>
+      <p>Ontwikkeld door <a href="mailto:guus.witjes@han.nl">Guus Witjes</a>, AI Desk</p>
+    </div>
+    <div class="footer-col">
+      <h4>Links</h4>
+      <ul>
+        <li><a href="https://www.han.nl">han.nl</a></li>
+        <li><a href="blueprint.html">5-Stappen Blueprint</a></li>
+        <li><a href="ontwerp-prompts.html">Ontwerp-Prompts</a></li>
+        <li><a href="help.html">Help &amp; Resources</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>HAN University of Applied Sciences &mdash; Maart 2026</p>
+  </div>
 </footer>
 
 <script>
